@@ -1,0 +1,207 @@
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #101827;
+  color: white;
+  font-family: Arial, sans-serif;
+  touch-action: none;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#game canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 23px;
+  margin: 6px;
+  background: linear-gradient(135deg, #168cff, #754bff);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  overflow-y: auto;
+  background: radial-gradient(circle at top, #263e65, #101827 75%);
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+h1 {
+  font-size: clamp(28px, 7vw, 48px);
+  color: #66caff;
+  text-shadow: 0 0 18px #168cff;
+}
+
+h2 {
+  color: #66caff;
+}
+
+.coins {
+  color: gold;
+  font-size: 26px;
+  margin: 10px;
+}
+
+#hud {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3px;
+  padding: 8px 3px;
+  background: #101827cc;
+  font-size: clamp(11px, 3vw, 17px);
+}
+
+.topbar button {
+  pointer-events: auto;
+  margin: 0;
+  padding: 7px 12px;
+}
+
+#crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 32px;
+  text-shadow: 0 0 5px black;
+}
+
+#message {
+  position: absolute;
+  top: 17%;
+  width: 100%;
+  text-align: center;
+  color: gold;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px black;
+}
+
+#mobileControls {
+  position: absolute;
+  inset: auto 0 15px;
+  height: 145px;
+  pointer-events: none;
+}
+
+#joystick {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #ffffff80;
+  border-radius: 50%;
+  background: #ffffff22;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+#stick {
+  position: absolute;
+  left: 33px;
+  top: 33px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #66caff;
+}
+
+#mobileControls button {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  padding: 4px;
+  border-radius: 50%;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+#fireBtn {
+  right: 20px;
+  bottom: 15px;
+  background: #e83e55;
+}
+
+#reloadBtn {
+  right: 95px;
+  bottom: 90px;
+}
+
+#jumpBtn {
+  right: 100px;
+  bottom: 5px;
+}
+
+#shopItems {
+  width: 100%;
+  max-width: 360px;
+}
+
+.shopItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  margin: 8px 0;
+  background: #263e65;
+  border: 1px solid #ffffff22;
+  border-radius: 12px;
+}
+
+.shopItem h3 {
+  margin: 4px;
+}
+
+@media (pointer: fine) {
+  #mobileControls {
+    display: none;
+  }
+}
